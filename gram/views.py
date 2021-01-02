@@ -5,7 +5,7 @@ from .models import ImagePost
 
 # Create your views here.
 
-def index(request):
+def index(request)
     '''
     function to display the index page
     '''
