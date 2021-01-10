@@ -10,6 +10,19 @@
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="{% url 'home' %}">Instagram</a>
+      <div class="col-10">
+
+        <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+
+          <div class="input-group" style="width: 40%">
+            <input type="text" class="form-control" placeholder="Search user" name="user">
+            <div class="input-group-btn">
+              <button class="btn btn-default" type="submit"><img src="https://static.thenounproject.com/png/101791-200.png" width="20" height="20" alt=""></button>
+            </div>
+          </div>
+
+        </form>
+    </div>
     </div>
   </div>
 </nav>

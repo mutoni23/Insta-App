@@ -2,7 +2,23 @@
 
 {% block content %}
 {{block.super}}
+<div class='container'>
+<div class='row' style='grid-gap: 5px;'>
     {% for image in images %}
-    <img src='{{image.image.url}}'>
+    <div class='col-md-9 col-lg-9' style='margin-bottom: 15px;'>
+    <h4>{{image.user.username}}<br><small>{{image.pub_date}}</small></h4>
+    <img src='{{image.image.url}}' width='100%'>
+    <p>{{image.img_desc}}</p>
+    <a href="{% url 'like' image.id%}"><i class="fas fa-heart"> {{image.likes}}</i></a>
+    <div>
+        <form action="{%url 'home' %}" method="post">
+              {% csrf_token %}
+              <input type="hidden" name="image" value="{{image.id}}">
+              <button class='btn' type='submit'></button>
+              <button class='btn'><i class="fas fa-comment"></i></button>
+          </form>
+      </div>  
+    </div>
     {% endfor %}
+</div></div>
 {%endblock%}

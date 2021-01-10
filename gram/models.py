@@ -7,7 +7,7 @@ class ImagePost(models.Model):
     img_desc = models.TextField()
     user =  models.ForeignKey(User,on_delete=models.CASCADE)
     pub_date = models.DateTimeField(auto_now_add=True)
-    likes = models.CharField(max_length =60)
+    likes = models.PositiveIntegerField(default=0)
     image = models.ImageField(upload_to = 'images/')
 
 class Profile(models.Model):
